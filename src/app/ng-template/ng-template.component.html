@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+        <mat-checkbox [(ngModel)] = "enabled"> Enable / Disable </mat-checkbox>
+
+        <p>Before template</p>
+
+        <h1 *ngIf = "enabled else mytemplate"> Enabled</h1>
+
+        <ng-template #mytemplate>
+            <h1>Inside Template</h1>
+        </ng-template>
+    </mat-card-content>
+</mat-card>

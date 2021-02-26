@@ -1,0 +1,50 @@
+<!-- <p *ngFor = "let name of names"> {{name}} </p>
+
+<p *ngFor = "let name of names; let i = index"> {{i}} - {{name}} </p> criou a variavel para receber o index -->
+
+<section>
+    <mat-card>
+        <mat-card-content>
+            <mat-selection-list #selectednames> 
+                <mat-list-option *ngFor = "let name of names"> {{name}} </mat-list-option>
+            </mat-selection-list>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>
+                Selected Options: {{selectednames.selectedOptions.selected.length}}
+                <!-- mesmo nome do id lá em cima.selectedOptions.selecionados.quantos -->
+            </p>
+        </mat-card-footer>
+    </mat-card>
+</section>
+
+
+<section>
+    <mat-card>
+        <mat-card-content>
+            <mat-list>
+                <h3 matSubHeader >Names</h3> <!-- como se fosse um titulo -->
+                <mat-list-item *ngFor = "let name of names"> <!-- puxando os nomes do array -->
+                    <mat-icon matListIcon>account_box</mat-icon> <!-- para que o icone se ajuste -->
+                    <h4 matLine> {{name}} </h4> <!-- para que fique na mesma linha -->
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <h3 matSubHeader >Cities</h3> <!-- como se fosse um titulo -->
+                <mat-list-item *ngFor = "let city of cities;"> <!-- puxando os nomes do array -->
+                    <mat-icon matListIcon>location_on</mat-icon> <!-- para que o icone se ajuste -->
+                    <h4 matLine> {{city.name}}</h4> <!-- para que fique na mesma linha -->
+                    <!-- <mat-icon matListIcon>location_city</mat-icon> para que o icone se ajuste -->
+                    <h4 matLine> {{city.state}} </h4> <!-- para que fique na mesma linha -->
+
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+    </mat-card>
+</section>
+
+
+
